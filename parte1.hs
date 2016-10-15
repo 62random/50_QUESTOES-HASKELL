@@ -16,7 +16,7 @@ compreendidos entre dois limites e espaçados de um valor constante. Por exemplo
 myEnumFromThenTo 1 3 10 corresponde à lista [1,3,5,7,9]. --}
 myEnumFromThenTo :: Int -> Int -> Int -> [Int]
 
-myEnumFromThenTo 0 0 0 = [0]
+myEnumFromThenTo 0 0 0 = []
 myEnumFromThenTo a b c
  |a <= c         = a:(myEnumFromThenTo b (2*b-a) c)
  |otherwise      = []

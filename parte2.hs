@@ -7,7 +7,8 @@ exemplo, myGroup [1,2,2,3,4,4,4,5,4] corresponde a
 [[1],[2,2],[3],[4,4,4],[5],[4]]. --}
 myGroup :: Eq a => [a] -> [[a]]
 myGroup [] = []
-myGroup (h:t) = t1:(myGroup t2) where (t1,t2) = span (==h) (h:t)
+myGroup [x] = [[x]]
+myGroup (h:t) = if (h==(head t)) then (h: head (myGroup t)):tail(myGroup t) else [h]:myGroup t
 
 {-- 15. 
 Apresente uma definição recursiva da função (pré-definida) myConcat ::

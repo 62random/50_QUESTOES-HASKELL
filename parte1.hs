@@ -28,7 +28,8 @@ corresponde à lista [1,2,3,10,20,30]. --}
 infixl +++
 (+++) :: [a] -> [a] -> [a]
 l +++ [] = l
-l +++ (h:t) = l ++ [h] +++ t
+[] +++ l = l
+(x:xs) +++ l = x:(xs +++ l)
 
 {-- 4. 
 Apresente uma definição recursiva da função (pré-definida) myLast :: [a] ->

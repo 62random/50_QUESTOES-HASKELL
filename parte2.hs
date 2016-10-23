@@ -117,11 +117,11 @@ l \\\  [] = l
 l \\\ (h:t) = (retirar1a h l) \\\ t
      
      
-retirar1a :: (Eq a) => a -> [a] -> [a]  ---FUNÇAO AUXILIAR PARA A PERGUNTA 24
+retirar1a :: (Eq a) => a -> [a] -> [a]  ---FUNÇAO AUXILIAR PARA A PERGUNTA 24 (igual à 23)
 retirar1a _ [] = []
-retirar1a a l 
-    |a /= last l    = retirar1a a (init l) ++ [last l]
-    |otherwise      = if elem a (init l) then retirar1a a (init l) ++ [last l] else init l
+retirar1a x l 
+    |elem x (init l)    = myDelete x (init l) ++ [last l]
+    |otherwise          = if last l == x  then init l else l
 
 {-- 25. 
 Apresente uma definição recursiva da função (pré-definida) myUnion :: Eq a
@@ -139,6 +139,6 @@ lista os elementos que não pertencem à segunda. Por exemplo, myIntersect
 [1,1,2,3,4] [1,3,5] corresponde a [1,1,3]. --}
 myIntersect :: Eq a => [a] -> [a] -> [a] 
 myIntersect [] _ = []
-myIntersect l [] = []
+myIntersect _ [] = []
 myIntersect (h:t) l = if elem h l then h:myIntersect t l else myIntersect t l
 

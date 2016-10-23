@@ -31,7 +31,7 @@ Apresente uma definição recursiva da função (pré-definida) myTails :: [a]
 [1,2,3] corresponde a [[1,2,3],[2,3],[3],[]]. --}
 myTails :: [a] -> [[a]]
 myTails [] = [[]]
-myTails ls = [ls] ++ (myTails (tail ls))
+myTails ls = ls:(myTails (tail ls))
 
 {-- 18. 
 Apresente uma definição recursiva da função (pré-definida) myIsPrefixOf ::

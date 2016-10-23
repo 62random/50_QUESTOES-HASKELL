@@ -78,9 +78,8 @@ que n elementos. Nesse caso a lista calculada é igual à lista fornecida. Por
 exemplo, myTake 2 [10,20,30] corresponde a [10,20]. --}
 myTake :: Int -> [a] -> [a]
 myTake _ [] = []
-myTake 0 _ = []
 myTake n (h:t) 
-     |n < 0      = []
+     |n <= 0     = []
      |otherwise  = h:(myTake (n-1) t)
 
 {-- 9. 
@@ -120,9 +119,8 @@ Int -> a -> [a] que dado um inteiro n e um elemento x constói uma lista com n
 elementos, todos iguais a x. Por exemplo, myReplicate 3 10 corresponde a
 [10,10,10]. --}
 myReplicate :: Int -> a -> [a] 
-myReplicate 0 a = []
 myReplicate n a 
-    |n < 0        = []
+    |n <= 0       = []
     |otherwise    = a:(myReplicate (n-1) a)
 
 {-- 13. 

@@ -1,2 +1,2 @@
 # 50_QUESTOES
-resolução das 50 questoes com a formatação do codeboard
+Solution for an assignement for a Funcional Programming course.
